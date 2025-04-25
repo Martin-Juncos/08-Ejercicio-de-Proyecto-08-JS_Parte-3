@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Mí - Portafolio Personal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="menu-principal">
+      <h1 class="titulo-principal">Sobre Mí</h1>
+      <nav>
+        <ul>
+          <li><a class="nav-link" href="index.html">Inicio</a></li>
+          <li><a class="nav-link" href="sobre-mi.html">Sobre mí</a></li>
+          <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="descripcion">
+        <h2 class="titulo-seccion">¿Quién soy?</h2>
+        <p>
+          Me apasiona el desarrollo web y estoy aprendiendo nuevas tecnologías
+          cada día.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Habilidades</h2>
+        <table class="tabla-habilidades">
+          <tr>
+            <th>Tecnología</th>
+            <th>Nivel</th>
+          </tr>
+          <tr>
+            <td>HTML</td>
+            <td>Avanzado</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>Intermedio</td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>Básico</td>
+          </tr>
+        </table>
+      </section>
+
+      <button onclick="mostrarRecomendacion()">Ver recomendación</button>
+      <button id="resetTabla" style="display: none">
+        Reiniciar habilidades
+      </button>
+      <p id="recomendacion"></p>
+    </main>
+
+    <footer id="pie-pagina">
+      <p>© 2025 - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+      let habilidades = [
+        { tecnologia: "HTML", nivel: "Avanzado" },
+        { tecnologia: "CSS", nivel: "Intermedio" },
+        { tecnologia: "JavaScript", nivel: "Básico" },
+      ];
+
+      function mostrarRecomendacion() {
+        const recomendacion = document.getElementById("recomendacion");
+
+        for (let habilidad of habilidades) {
+          if (habilidad.nivel === "Básico") {
+            recomendacion.textContent =
+              "Te sugerimos seguir practicando " + habilidad.tecnologia + ".";
+            document.getElementById("resetTabla").style.display = "inline";
+            return;
+          }
+        }
+
+        recomendacion.textContent = "¡Vas muy bien con todas las tecnologías!";
+      }
+
+      document.getElementById("resetTabla").addEventListener("click", () => {
+        habilidades = [
+          { tecnologia: "HTML", nivel: "Avanzado" },
+          { tecnologia: "CSS", nivel: "Intermedio" },
+          { tecnologia: "JavaScript", nivel: "Básico" },
+        ];
+        document.getElementById("recomendacion").textContent = "";
+        document.getElementById("resetTabla").style.display = "none";
+      });
+    </script>
+  </body>
+</html>

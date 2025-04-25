@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Portafolio Personal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="menu-principal">
+      <h1 class="titulo-principal">Contacto</h1>
+      <nav>
+        <ul>
+          <li><a class="nav-link" href="index.html">Inicio</a></li>
+          <li><a class="nav-link" href="sobre-mi.html">Sobre mí</a></li>
+          <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2 class="titulo-seccion">Enviame un mensaje</h2>
+        <form id="formulario">
+          <input
+            id="nombre"
+            type="text"
+            placeholder="Nombre completo"
+            required
+          />
+          <input type="email" placeholder="Correo electrónico" required />
+          <textarea rows="5" placeholder="Escribí tu mensaje..."></textarea>
+          <input type="submit" value="Enviar" />
+        </form>
+        <section>
+          <h2 class="titulo-seccion">Motivos frecuentes de contacto</h2>
+          <ul id="motivos-contacto"></ul>
+        </section>
+
+        <p id="saludo"></p>
+      </section>
+    </main>
+
+    <footer id="pie-pagina">
+      <p>© 2025 - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="formulario.js"></script>
+  </body>
+</html>

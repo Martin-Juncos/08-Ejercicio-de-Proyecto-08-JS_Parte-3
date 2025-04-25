@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio - Portafolio Personal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="menu-principal">
+      <h1 class="titulo-principal">Portafolio Personal</h1>
+      <nav>
+        <ul>
+          <li><a class="nav-link" href="index.html">Inicio</a></li>
+          <li><a class="nav-link" href="sobre-mi.html">Sobre mí</a></li>
+          <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="descripcion">
+        <h2 class="titulo-seccion">Bienvenido</h2>
+        <p>
+          Soy desarrollador web en formación. En este portafolio podrás conocer
+          más sobre mí y mis proyectos.
+        </p>
+      </section>
+
+      <section id="proyectos">
+        <h2 class="titulo-seccion">Mis Proyectos</h2>
+        <div class="tarjeta-proyecto">Proyecto 1</div>
+        <div class="tarjeta-proyecto">Proyecto 2</div>
+        <div class="tarjeta-proyecto">Proyecto 3</div>
+      </section>
+
+      <section id="lenguajes">
+        <h2 class="titulo-seccion">Lenguajes que manejo</h2>
+        <input type="text" id="nuevoLenguaje" placeholder="Agregar lenguaje" />
+        <button id="agregarLenguaje">Agregar</button>
+        <ul id="lista-lenguajes"></ul>
+      </section>
+    </main>
+
+    <footer id="pie-pagina">
+      <p>© 2025 - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+      let tecnologias = JSON.parse(localStorage.getItem("tecnologias")) || [];
+
+      const lista = document.getElementById("lista-lenguajes");
+      const input = document.getElementById("nuevoLenguaje");
+      const boton = document.getElementById("agregarLenguaje");
+
+      function renderizarLista() {
+        lista.innerHTML = "";
+        tecnologias.forEach((tec, index) => {
+          const li = document.createElement("li");
+          li.textContent = tec;
+
+          const btn = document.createElement("button");
+          btn.textContent = "Eliminar";
+          btn.addEventListener("click", () => {
+            tecnologias.splice(index, 1);
+            guardarYActualizar();
+          });
+
+          li.appendChild(btn);
+          lista.appendChild(li);
+        });
+      }
+
+      function guardarYActualizar() {
+        localStorage.setItem("tecnologias", JSON.stringify(tecnologias));
+        renderizarLista();
+      }
+
+      boton.addEventListener("click", () => {
+        const nuevo = input.value.trim();
+        if (nuevo !== "") {
+          tecnologias.push(nuevo);
+          guardarYActualizar();
+          input.value = "";
+        }
+      });
+
+      renderizarLista();
+    </script>
+  </body>
+</html>
