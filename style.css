@@ -6,6 +6,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  padding-bottom: 140px;
 }
 
 /* ===== MENÚ DE NAVEGACIÓN ===== */
@@ -43,24 +44,22 @@ body {
   margin-top: 20px;
 }
 
-.subtitulo {
-  color: teal;
-  margin-bottom: 10px;
-}
-
-/* ===== SECCIONES ===== */
-#descripcion {
-  background-color: #ffffff;
-  padding: 20px;
-  margin: 20px;
-  border-left: 5px solid teal;
-}
-
+/* ===== SECCIONES GENERALES ===== */
+#descripcion,
+#habilidades,
+#lenguajes,
 #proyectos {
   padding: 30px;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-left: 5px solid teal;
+  border-radius: 4px;
+  margin-bottom: 40px;
 }
 
-/* ===== TARJETAS DE PROYECTOS ===== */
+/* ===== PROYECTOS ===== */
 .tarjeta-proyecto {
   background-color: #ffffff;
   border: 1px solid #ccc;
@@ -77,44 +76,230 @@ body {
   background-color: #eef7ff;
 }
 
-/* ===== TABLA ===== */
-.tabla-habilidades {
-  width: 80%;
-  margin: auto;
-  border-collapse: collapse;
-  background-color: #eef7ff;
-}
-
-.tabla-habilidades th,
-.tabla-habilidades td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-}
-
-/* ===== FORMULARIO ===== */
+/* ===== FORMULARIO DE CONTACTO ===== */
 #formulario {
   background-color: #ffffff;
   border: 1px solid #ddd;
+  padding: 25px;
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+  border-left: 5px solid darkcyan;
+  border-radius: 4px;
+}
+
+#formulario input,
+#formulario textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#formulario input:focus,
+#formulario textarea:focus {
+  border-color: darkcyan;
+  outline: none;
+  background-color: #f0fafa;
+}
+
+#formulario input[type="submit"] {
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#formulario input[type="submit"]:hover {
+  background-color: #007a7a;
+}
+
+#saludo {
+  text-align: center;
+  font-weight: bold;
+  color: darkslategray;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* ===== MOTIVOS FRECUENTES DE CONTACTO ===== */
+#motivos-container {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
   padding: 20px;
   width: 90%;
   max-width: 600px;
   margin: 30px auto;
+  border-left: 5px solid steelblue;
+  border-radius: 4px;
 }
 
-input,
-textarea {
-  display: block;
-  width: 100%;
+#motivos-container h2 {
+  text-align: center;
+  color: steelblue;
   margin-bottom: 15px;
+}
+
+#motivos-contacto {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#motivos-contacto li {
+  background-color: #f0f8ff;
+  border: 1px solid #bbb;
+  padding: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+
+#motivos-contacto li button {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#motivos-contacto li button:hover {
+  background-color: darkred;
+}
+
+#motivos-container input[type="text"],
+#motivos-container button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+#motivos-container button {
+  background-color: steelblue;
+  color: white;
+  cursor: pointer;
+}
+
+#motivos-container button:hover {
+  background-color: #003f7f;
+}
+
+/* ===== SECCIÓN LENGUAJES ===== */
+#lenguajes input,
+#lenguajes button {
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+#lista-lenguajes {
+  margin-top: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+#lista-lenguajes li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 6px auto;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#lista-lenguajes button {
+  padding: 4px 8px;
+  background-color: crimson;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#lista-lenguajes button:hover {
+  background-color: darkred;
+}
+
+/* ===== SECCIÓN HABILIDADES ===== */
+#habilidades {
+  border-left-color: mediumslateblue;
+}
+
+.tabla-habilidades {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f3f6ff;
+  margin-bottom: 20px;
+}
+
+.tabla-habilidades th {
+  background-color: #4b6cb7;
+  color: white;
+  padding: 12px;
+}
+
+.tabla-habilidades td {
   padding: 10px;
   border: 1px solid #ccc;
+  text-align: center;
 }
 
-input:focus,
-textarea:focus {
-  border-color: darkcyan;
-  outline: none;
+.acciones-habilidades {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-accion,
+.btn-secundario {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-accion {
+  background-color: #4b6cb7;
+  color: white;
+}
+
+.btn-accion:hover {
+  background-color: #2a418f;
+}
+
+.btn-secundario {
+  background-color: lightgray;
+  color: #333;
+}
+
+.btn-secundario:hover {
+  background-color: gray;
+  color: white;
+}
+
+.mensaje-recomendacion {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #444;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #e7f2ff;
+  border-left: 5px solid #4b6cb7;
 }
 
 /* ===== PIE DE PÁGINA ===== */

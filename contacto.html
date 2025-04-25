@@ -32,12 +32,18 @@
           <textarea rows="5" placeholder="Escribí tu mensaje..."></textarea>
           <input type="submit" value="Enviar" />
         </form>
-        <section>
-          <h2 class="titulo-seccion">Motivos frecuentes de contacto</h2>
-          <ul id="motivos-contacto"></ul>
-        </section>
-
         <p id="saludo"></p>
+      </section>
+
+      <section id="motivos-container">
+        <h2 class="titulo-seccion">Motivos frecuentes de contacto</h2>
+        <input
+          type="text"
+          id="nuevoMotivoInput"
+          placeholder="Agregar nuevo motivo"
+        />
+        <button id="agregarMotivoBtn">Agregar motivo</button>
+        <ul id="motivos-contacto"></ul>
       </section>
     </main>
 

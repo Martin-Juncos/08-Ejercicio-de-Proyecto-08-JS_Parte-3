@@ -27,7 +27,7 @@
         </p>
       </section>
 
-      <section>
+      <section id="habilidades">
         <h2 class="titulo-seccion">Habilidades</h2>
         <table class="tabla-habilidades">
           <tr>
@@ -47,13 +47,18 @@
             <td>Básico</td>
           </tr>
         </table>
-      </section>
 
-      <button onclick="mostrarRecomendacion()">Ver recomendación</button>
-      <button id="resetTabla" style="display: none">
-        Reiniciar habilidades
-      </button>
-      <p id="recomendacion"></p>
+        <div class="acciones-habilidades">
+          <button onclick="mostrarRecomendacion()" class="btn-accion">
+            Ver recomendación
+          </button>
+          <button id="resetTabla" class="btn-secundario" style="display: none">
+            Reiniciar habilidades
+          </button>
+        </div>
+
+        <p id="recomendacion" class="mensaje-recomendacion"></p>
+      </section>
     </main>
 
     <footer id="pie-pagina">
@@ -74,7 +79,8 @@
           if (habilidad.nivel === "Básico") {
             recomendacion.textContent =
               "Te sugerimos seguir practicando " + habilidad.tecnologia + ".";
-            document.getElementById("resetTabla").style.display = "inline";
+            document.getElementById("resetTabla").style.display =
+              "inline-block";
             return;
           }
         }
